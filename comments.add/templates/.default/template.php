@@ -5,19 +5,13 @@ use Bitrix\Main\Localization\Loc as Loc;
 Loc::loadMessages(__FILE__);
 $this->setFrameMode(true);
 
-
 $path = parse_url($APPLICATION->GetCurPage(), PHP_URL_PATH);
 $elementID = end(explode("/", trim($path, "/")));
 ?>
 
 <? if ($USER->IsAuthorized()): ?>
 <p class="h5"><?=Loc::getMessage('ADD_COMMENT')?></p>
-<div class="custom_send_form">
-    <? if (!empty($arResult['ERROR'])) { ?>
-        <div class="succes_send_form">
-            <? echo $arResult["OK_MESSAGE"]; ?>
-        </div>
-    <? } ?>
+<div class="comments_add">
     <form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post">
         <?= bitrix_sessid_post() ?>
         <div class="card">

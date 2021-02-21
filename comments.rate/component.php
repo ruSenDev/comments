@@ -18,6 +18,7 @@ $selectedFields = [
     'IBLOCK_ID',
     'PROPERTY_ELEMENT_ID',
     'PROPERTY_PAGE_RATE',
+    'ACTIVE',
 ];
 
 $res = CIBlockElement::GetList(

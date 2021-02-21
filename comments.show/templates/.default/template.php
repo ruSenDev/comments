@@ -27,7 +27,7 @@ $elementID = end(explode("/", trim($path, "/")));
     $rsUser = CUser::GetByID($item['CREATED_BY']);
     $arUser = $rsUser->Fetch();
     ?>
-    <? if (($item['PROPERTY_ELEMENT_ID_VALUE'] == $elementID)): ?>
+    <? if (($item['PROPERTY_ELEMENT_ID_VALUE'] == $elementID) && ($item['ACTIVE'] == 'Y')): ?>
         <div class="card text-left mt-2 mb-2">
             <div class="card-header text-muted">
                 <div class="row">

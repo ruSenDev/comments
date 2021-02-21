@@ -24,7 +24,7 @@ $elementID = end(explode("/", trim($path, "/")));
 $rating = 0;
 $count = 0;
 foreach ($arResult['COMMENTS'] as $key => $item) {
-    if ($item['PROPERTY_ELEMENT_ID_VALUE'] == $elementID) {
+    if (($item['PROPERTY_ELEMENT_ID_VALUE'] == $elementID)  && ($item['ACTIVE'] == 'Y')) {
         $rating += $item['PROPERTY_PAGE_RATE_VALUE'];
         $count++;
     }
